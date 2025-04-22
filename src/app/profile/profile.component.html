@@ -1,0 +1,8 @@
+<div class="profile">
+  <h2>Your Profile</h2>
+  <h3>Your Books:</h3>
+  <div *ngFor="let book of myBooks" class="profile-book">
+    <h4>{{ book.title }}</h4>
+    <p>{{ book.author }}</p>
+  </div>
+</div>

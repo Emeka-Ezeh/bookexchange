@@ -1,0 +1,11 @@
+<div *ngIf="book" class="book-detail">
+  <h2>{{ book.title }}</h2>
+  <p><strong>Author:</strong> {{ book.author }}</p>
+  <p><strong>Description:</strong> {{ book.description }}</p>
+  <div *ngIf="book.images && book.images.length">
+    <h3>Images</h3>
+    <div *ngFor="let image of book.images">
+      <img [src]="image" alt="{{book.title}}" style="max-width:200px; margin: 5px;"/>
+    </div>
+  </div>
+</div>

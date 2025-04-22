@@ -1,0 +1,19 @@
+<h2>Add a Book</h2>
+<form (submit)="submitForm()">
+  <label>Title</label>
+  <input type="text" [(ngModel)]="bookData.title" required>
+
+  <label>Author</label>
+  <input type="text" [(ngModel)]="bookData.author" required>
+
+  <label>Genre</label>
+  <input type="text" [(ngModel)]="bookData.genre">
+
+  <label>Description</label>
+  <textarea [(ngModel)]="bookData.description"></textarea>
+
+  <label>Image URL</label>
+  <input type="text" [(ngModel)]="bookData.images[0]">
+
+  <button type="submit">Add Book</button>
+</form>
