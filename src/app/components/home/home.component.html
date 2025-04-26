@@ -1,5 +1,48 @@
+
+<!-- Sezione di benvenuto -->
 <div class="home">
-  <h1>Welcome to BookExchange</h1>
-  <p>Your place to swap used books with fellow enthusiasts!</p>
-  <a routerLink="/books">Browse Books</a> | <a routerLink="/profile">Your Profile</a>
+  <h1>Benvenuti nel mondo di BookExchange</h1>
+  <p>Scopri i più amati dai nostri lettori</p>
+  <a class="link" routerLink="/books">Browse Books</a> |
+  <a class="link" routerLink="/profile">Your Profile</a>
+</div>
+
+<!-- Sezione per i libri più amati -->
+<div class="container-loved">
+  <h2>I più amati ❤️</h2>                <!-- solo QUESTO H2 -->
+  <div class="book-grid">
+    <a
+      *ngFor="let book of popularBooks"
+      [routerLink]="['/books', book.id]"
+      class="book-card"
+    >
+      <img
+        *ngIf="book.thumbnail"
+        [src]="book.thumbnail"
+        alt="{{ book.title }}"
+      />
+      <h3>{{ book.title }}</h3>
+      <p class="author">{{ book.authors }}</p>
+    </a>
+  </div>
+</div>
+
+<!-- Sezione per i libri casuali -->
+<div class="container-genre">
+  <h2>Esplora i generi</h2>
+  <div class="book-grid">
+    <a
+      *ngFor="let book of randomBooks"
+      [routerLink]="['/books', book.id]"
+      class="book-card"
+    >
+      <img
+        *ngIf="book.thumbnail"
+        [src]="book.thumbnail"
+        alt="{{ book.title }}"
+      />
+      <h3>{{ book.title }}</h3>
+      <p class="author">{{ book.authors }}</p>
+    </a>
+  </div>
 </div>

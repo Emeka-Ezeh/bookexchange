@@ -10,6 +10,7 @@ import { BookListComponent } from './components/book-list/book-list.component';
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { BookFormComponent } from './components/book-form/book-form.component';
+import { NavbarComponent } from './components/navbar/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -18,14 +19,16 @@ import { BookFormComponent } from './components/book-form/book-form.component';
     BookListComponent,
     BookDetailComponent,
     ProfileComponent,
-    BookFormComponent
+    BookFormComponent,
+    NavbarComponent  
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule // Add FormsModule to the imports arrayS
-  ],
+
+],
   providers: [],
   bootstrap: [AppComponent]
 })

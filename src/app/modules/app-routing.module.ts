@@ -11,6 +11,8 @@ const routes: Routes = [
   { path: 'books', component: BookListComponent },
   { path: 'books/:id', component: BookDetailComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'books/:id', component: BookDetailComponent },
+
   // redirect unknown routes to home
   { path: '**', redirectTo: '' }
 ];

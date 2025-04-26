@@ -5,10 +5,29 @@ import { BookService } from '../../../services/book.service';
 
 @Component({
   selector: 'app-book-list',
-  standalone: false,
   templateUrl: './book-list.component.html',
-  styleUrl: './book-list.component.css'
+  styleUrls: ['./book-list.component.css'],
+  standalone: false
 })
+
+
+export class BookListComponent implements OnInit {
+  books = [
+    { _id: 1, title: 'Harry Potter e la Pietra Filosofale', author: 'J.K. Rowling' },
+    { _id: 2, title: 'Il Signore degli Anelli', author: 'J.R.R. Tolkien' },
+    { _id: 3, title: '1984', author: 'George Orwell' }
+  ];
+
+  constructor() {}
+
+  ngOnInit() {}
+}
+
+
+
+
+
+/*
 export class BookListComponent implements OnInit {
   books: any[] = [];
 
@@ -36,3 +55,4 @@ export class BookListComponent implements OnInit {
   }
 
 }
+*/
