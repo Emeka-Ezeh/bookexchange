@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
-import { BookListComponent } from './book-list/book-list.component';
-import { BookDetailComponent } from './book-detail/book-detail.component';
-import { ProfileComponent } from './profile/profile.component';
+import { HomeComponent } from '../../app/components/home/home.component'
+import { BookListComponent } from '../../app/components/book-list/book-list.component';
+import { BookDetailComponent } from '../../app/components/book-detail/book-detail.component';
+import { ProfileComponent } from '../../app/components/profile/profile.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
