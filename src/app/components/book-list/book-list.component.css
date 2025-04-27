@@ -1,25 +1,35 @@
 .book-list {
   padding: 2rem;
-  max-width: 800px;
+  max-width: 1200px; 
   margin: 0 auto;
 }
 
 .book-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #f8f9fa;
   padding: 1rem;
   margin-bottom: 1rem;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  gap: 1rem; /* Aggiungi spazio tra gli elementi */
 }
 
 .book-item h3 {
   margin: 0;
   color: #2c3e50;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  font-size: bold 1.5rem; 
 }
 
 .book-item p {
   margin: 0.5rem 0;
   color: #555;
+  font-family: 'Arial', sans-serif;
+  max-width: 50%;
+
 }
 
 .book-item a {
@@ -30,3 +40,12 @@
 .book-item a:hover {
   text-decoration: underline;
 }
+
+.book-thumbnail {
+  max-width: 300px;  /* Limita la larghezza dell'immagine */
+  height: auto;      /* Mantieni il rapporto d'aspetto dell'immagine */
+  border-radius: 8px; /* Aggiungi angoli arrotondati all'immagine */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Aggiungi un'ombra all'immagine */
+  margin-left: 2rem; /* Aggiungi margine a sinistra per distanziare l'immagine dal testo */
+}
+

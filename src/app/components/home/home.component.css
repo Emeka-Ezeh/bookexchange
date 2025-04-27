@@ -1,10 +1,17 @@
 .home  {
+  font-family: "Tagesschrift", system-ui;
   text-align: center;
   padding-top: 3%;
-  background-color: #eee3e3;
+  background-color: #cdccd8;
   border-radius: 12px;
   margin-top: 3%;
   width: 100%;
+}
+
+.tagesschrift-regular {
+  font-family: "Tagesschrift", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .home h1 {
@@ -13,8 +20,31 @@
   margin-bottom: 20px;
 }
 
+.container-category h2{
+  text-align: center;
+  font-family: "Tagesschrift", system-ui;
+  font-weight: 600;
+  text-transform: uppercase;
+
+}
+
+::ng-deep .background {
+  background-image: url('../../img/1.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  padding-top: 10%;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+}
+
+
 .home p {
-  font-size: 1.2rem;
+  font-family: "Single Day", cursive;
+  font-weight: 600;
+  font-size: 1.5rem;
   color: #070707;
   margin-bottom: 20px;
 }
@@ -43,6 +73,7 @@
   font-size: 2rem;
 }
 
+
 .book-grid {
   display: flex;
   justify-content: center;
@@ -52,10 +83,16 @@
 .book-card {
   background: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
   padding: 1rem;
   text-align: center;
   width: 50%;
+}
+
+.book-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .book-card img {
@@ -66,12 +103,21 @@
 }
 
 .book-card h3 {
+  font-family: "Tagesschrift", system-ui;
+  color: #363274;
   font-size: 1.1rem;
   margin: 0.5rem 0;
 }
 
+.book-card p {
+  font-weight: 600;
+  font-family:"Single Day", cursive; ;
+  font-size: 1rem;
+  color: #363274;
+
+}
+
 .book-card .author {
-  font-size: 0.9rem;
   color: #555;
   margin-bottom: 0.5rem;
 }
@@ -83,7 +129,7 @@
   overflow: hidden;
 }
 
-.container-loved{
+.container-category {
   display: flex;
   justify-content: right;
   align-items: center;
@@ -94,3 +140,21 @@
 
 
 
+.footer {
+  background-color: #1f1f1f;
+  color: #d3d3d3;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 14px;
+  margin-top: 3rem;
+}
+
+/* Easter Egg per Kevin il Grande */
+.footer::after {
+  content: "👑 Onoriamo il grandissimo Kevin, leggenda vivente! 👑";
+  display: block;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #ffd700;
+  opacity: 0.7;
+}

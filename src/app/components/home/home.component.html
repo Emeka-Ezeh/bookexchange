@@ -1,48 +1,78 @@
-
 <!-- Sezione di benvenuto -->
 <div class="home">
   <h1>Benvenuti nel mondo di BookExchange</h1>
   <p>Scopri i più amati dai nostri lettori</p>
-  <a class="link" routerLink="/books">Browse Books</a> |
-  <a class="link" routerLink="/profile">Your Profile</a>
+  <div class="home-links">
+    <a class="link" routerLink="/books">Sfoglia i Libri</a> |
+    <a class="link" routerLink="/profile">Il tuo Profilo</a>
+  </div>
 </div>
 
-<!-- Sezione per i libri più amati -->
-<div class="container-loved">
-  <h2>I più amati ❤️</h2>                <!-- solo QUESTO H2 -->
+<!-- Sezione: I più amati -->
+
+  <div class="background"> 
+    <div class="container-category">
+  <h2>I più amati ❤️</h2>
   <div class="book-grid">
-    <a
-      *ngFor="let book of popularBooks"
-      [routerLink]="['/books', book.id]"
-      class="book-card"
-    >
-      <img
-        *ngIf="book.thumbnail"
-        [src]="book.thumbnail"
-        alt="{{ book.title }}"
-      />
+    <a *ngFor="let book of popularBooks" [routerLink]="['/books', book.id]" class="book-card">
+      <img *ngIf="book.thumbnail" [src]="book.thumbnail" alt="{{ book.title }}" />
+      <h3>{{ book.title }}</h3>
+      <p class="author">{{ book.authors }}</p>
+    </a>
+  </div>
+ </div>
+</div>
+<!-- Sezione: Libri casuali -->
+<div class="container-category">
+  <h2>Esplora i generi 🎨</h2>
+  <p class="section-description">Scegli tra avventure, storia, romanticismo e molto altro!</p>
+  <div class="book-grid">
+    <a *ngFor="let book of randomBooks" [routerLink]="['/books', book.id]" class="book-card">
+      <img *ngIf="book.thumbnail" [src]="book.thumbnail" alt="{{ book.title }}" />
       <h3>{{ book.title }}</h3>
       <p class="author">{{ book.authors }}</p>
     </a>
   </div>
 </div>
 
-<!-- Sezione per i libri casuali -->
-<div class="container-genre">
-  <h2>Esplora i generi</h2>
+<!-- Sezione: Crime -->
+<div class="container-category">
+  <h2>Libri Crime (Gialli) 🔍</h2>
   <div class="book-grid">
-    <a
-      *ngFor="let book of randomBooks"
-      [routerLink]="['/books', book.id]"
-      class="book-card"
-    >
-      <img
-        *ngIf="book.thumbnail"
-        [src]="book.thumbnail"
-        alt="{{ book.title }}"
-      />
+    <a *ngFor="let book of crimeBooks" [routerLink]="['/books', book.id]" class="book-card">
+      <img *ngIf="book.thumbnail" [src]="book.thumbnail" alt="{{ book.title }}" />
       <h3>{{ book.title }}</h3>
       <p class="author">{{ book.authors }}</p>
     </a>
   </div>
 </div>
+
+<!-- Sezione: Romantici -->
+<div class="container-category">
+  <h2>Libri Romantici 💖</h2>
+  <div class="book-grid">
+    <a *ngFor="let book of romanceBooks" [routerLink]="['/books', book.id]" class="book-card">
+      <img *ngIf="book.thumbnail" [src]="book.thumbnail" alt="{{ book.title }}" />
+      <h3>{{ book.title }}</h3>
+      <p class="author">{{ book.authors }}</p>
+    </a>
+  </div>
+</div>
+
+<!-- Sezione: Fantasy -->
+<div class="container-category">
+  <h2>Libri Fantasy 🧙‍♂️</h2>
+  <div class="book-grid">
+    <a *ngFor="let book of fantasyBooks" [routerLink]="['/books', book.id]" class="book-card">
+      <img *ngIf="book.thumbnail" [src]="book.thumbnail" alt="{{ book.title }}" />
+      <h3>{{ book.title }}</h3>
+      <p class="author">{{ book.authors }}</p>
+    </a>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; 2025 BookExchange - Tutti i diritti riservati 📚</p>
+  <p>Seguici sui social!</p>
+</footer>

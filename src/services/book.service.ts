@@ -36,12 +36,15 @@ export class BookService {
     return this.http.post<any>(this.apiUrl, book);
   }
 
+
+
+
+  
   searchBooksOnGoogle(query: string, maxResults: number = 10, start: number): Observable<any> {
     return this.http.get<any>(
       `${this.googleApiUrl}?q=${query}&maxResults=${maxResults}`
     );
   }
-
 
   
 }

@@ -18,20 +18,25 @@ interface GoogleBook {
 export class HomeComponent implements OnInit {
   popularBooks: GoogleBook[] = [];
   randomBooks: GoogleBook[] = [];
+  crimeBooks: GoogleBook[] = [];
+  romanceBooks: GoogleBook[] = [];
+  fantasyBooks: GoogleBook[] = [];
 
   constructor(private bookService: BookService) {}
 
   ngOnInit(): void {
     this.loadPopularBooks();
     this.loadRandomBooks();
+    this.loadCrimeBooks();    // <- aggiungi anche questi
+    this.loadRomanceBooks();  // <- per caricare le nuove categorie
+    this.loadFantasyBooks();  // <- 
   }
 
   private loadPopularBooks(): void {
     this.bookService.searchBooksOnGoogle('bestsellers', 5, 0).subscribe(
       (response) => {
-        console.log('Popular Books:', response);
         this.popularBooks = response.items.map((item: any) => ({
-          id:          item.id,                          // ← QUI
+          id: item.id,
           title: item.volumeInfo.title,
           authors: item.volumeInfo.authors?.join(', ') ?? 'Autore sconosciuto',
           description: item.volumeInfo.description ?? '',
@@ -51,9 +56,8 @@ export class HomeComponent implements OnInit {
 
     this.bookService.searchBooksOnGoogle(term, 5, start).subscribe(
       (response) => {
-        console.log('Random Books:', response);
         this.randomBooks = response.items.map((item: any) => ({
-          id:          item.id,                          // ← QUI
+          id: item.id,
           title: item.volumeInfo.title,
           authors: item.volumeInfo.authors?.join(', ') ?? 'Autore sconosciuto',
           description: item.volumeInfo.description ?? '',
@@ -62,6 +66,57 @@ export class HomeComponent implements OnInit {
       },
       (err) => {
         console.error('Errore nel caricare i libri casuali', err);
+      }
+    );
+  }
+
+  private loadCrimeBooks(): void {
+    this.bookService.searchBooksOnGoogle('crime', 5, 0).subscribe(
+      (response) => {
+        this.crimeBooks = response.items.map((item: any) => ({
+          id: item.id,
+          title: item.volumeInfo.title,
+          authors: item.volumeInfo.authors?.join(', ') ?? 'Autore sconosciuto',
+          description: item.volumeInfo.description ?? '',
+          thumbnail: item.volumeInfo.imageLinks?.thumbnail ?? ''
+        }));
+      },
+      (err) => {
+        console.error('Errore nel caricare i libri crime', err);
+      }
+    );
+  }
+
+  private loadRomanceBooks(): void {
+    this.bookService.searchBooksOnGoogle('romance', 5, 0).subscribe(
+      (response) => {
+        this.romanceBooks = response.items.map((item: any) => ({
+          id: item.id,
+          title: item.volumeInfo.title,
+          authors: item.volumeInfo.authors?.join(', ') ?? 'Autore sconosciuto',
+          description: item.volumeInfo.description ?? '',
+          thumbnail: item.volumeInfo.imageLinks?.thumbnail ?? ''
+        }));
+      },
+      (err) => {
+        console.error('Errore nel caricare i libri romantici', err);
+      }
+    );
+  }
+
+  private loadFantasyBooks(): void {
+    this.bookService.searchBooksOnGoogle('fantasy', 5, 0).subscribe(
+      (response) => {
+        this.fantasyBooks = response.items.map((item: any) => ({
+          id: item.id,
+          title: item.volumeInfo.title,
+          authors: item.volumeInfo.authors?.join(', ') ?? 'Autore sconosciuto',
+          description: item.volumeInfo.description ?? '',
+          thumbnail: item.volumeInfo.imageLinks?.thumbnail ?? ''
+        }));
+      },
+      (err) => {
+        console.error('Errore nel caricare i libri fantasy', err);
       }
     );
   }
