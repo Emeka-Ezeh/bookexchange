@@ -1,4 +1,189 @@
-.home {
+.home  {
+  font-family: "Tagesschrift", system-ui;
   text-align: center;
-  padding: 20px;
+  padding-top: 3%;
+  border-radius: 12px;
+  margin-top: 3%;
+  width: 100%;
+}
+
+.tagesschrift-regular {
+  font-family: "Tagesschrift", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.home h1 {
+  font-size: 2rem;
+  color: #070707;
+  margin-bottom: 20px;
+}
+
+.container-category h2{
+  text-align: center;
+  font-family: "Tagesschrift", system-ui;
+  font-weight: 600;
+  text-transform: uppercase;
+
+}
+
+.container-category p{
+  font-family: "Single Day", cursive;
+  font-weight: 200;
+
+}
+
+
+
+::ng-deep .background1 {
+  background-image: url("../../../assets/1.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position:bottom center;
+  padding-top: 1%;
+  margin-top: 0rem;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+  
+
+}
+
+::ng-deep .background2 {
+  background-image: url("../../../assets/4.jpg");
+  background-attachment: fixed;
+  background-position:center;
+  padding-top: 1%;
+  margin-top: 0rem;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+  box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.8); 
+
+
+}
+
+
+
+.home p {
+  font-family: "Single Day", cursive;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #070707;
+  margin-bottom: 20px;
+}
+
+.link {
+  color: #070707;;  
+  font-size: 0.8rem;
+  
+}
+
+.welcome-section {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.popular-books {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.popular-books h2 {
+  text-align: start;
+  margin-bottom: 2.5rem;
+  padding-left: 3rem;
+  font-size: 2rem;
+}
+
+
+.book-grid {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.book-card {
+  background: #eff9ff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  padding: 1rem;
+  text-align: center;
+  width: 50%;
+}
+
+.book-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 0.75rem;
+  border-radius: 4px;
+}
+
+.book-card h3 {
+  font-family: "Tagesschrift", system-ui;
+  color: #363274;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.book-card p {
+  font-weight: 600;
+  font-family:"Single Day", cursive; ;
+  font-size: 1rem;
+  color: #363274;
+
+}
+
+.book-card .author {
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.book-card .desc {
+  font-size: 0.8rem;
+  color: #777;
+  max-height: 3.5em;
+  overflow: hidden;
+}
+
+.container-category {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 2rem;
+  width: 99%;
+}
+
+
+
+.footer {
+  background-color: #1f1f1f;
+  color: #d3d3d3;
+  text-align: center;
+  padding-top: 1.1vh;
+  font-size: 14px;
+  margin-top: 3vh;
+}
+
+/* Easter Egg per Kevin il Grande */
+.footer::after {
+  content: "👑 Onoriamo il grandissimo Kevin, leggenda vivente! 👑";
+  display: block;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #ffd700; 
+  opacity: 0; 
+  transition: opacity 0.3s ease; 
+}
+
+.footer:hover::after {
+  opacity: 1; 
 }

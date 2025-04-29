@@ -1,8 +1,38 @@
+<!-- Se c'è un errore, mostra un messaggio -->
+<div *ngIf="errorMessage">
+  <p>{{ errorMessage }}</p>
+</div>
+
+<!-- Se ci sono libri, mostra la lista -->
 <div class="book-list">
-  <h2>Available Books</h2>
-  <div *ngFor="let book of books" class="book-item">
-    <h3>{{book.title}}</h3>
-    <p>by {{book.author}}</p>
-    <a [routerLink]="['/books', book._id]">View Details</a>
+  <h2>Libri Disponibili</h2>
+  <div *ngIf="books.length > 0">
+    <div *ngFor="let book of books" class="book-item">
+      <h3>{{ book.volumeInfo.title }}</h3>
+      <p>by {{ book.volumeInfo.authors?.join(', ') }}</p>
+
+      <!-- Limita la descrizione a 90 parole -->
+      <p>{{ truncateDescription(book.volumeInfo.description) }}</p>
+
+      <!-- Aggiungi questa parte per visualizzare l'immagine del libro -->
+      <img *ngIf="book.volumeInfo.imageLinks?.thumbnail" 
+           [src]="book.volumeInfo.imageLinks.thumbnail" 
+           alt="{{ book.volumeInfo.title }}" 
+           class="book-thumbnail">
+
+      <a [routerLink]="['/books', book.id]">View Details</a>
+    </div>
+  </div>
+
+  <!-- Se non ci sono libri, mostra un messaggio -->
+  <div *ngIf="books.length === 0">
+    <p>Nessun libro trovato.</p>
   </div>
 </div>
+
+
+<footer class="footer">
+  <p>&copy; 2025 BookExchange - Tutti i diritti riservati 📚</p>
+  <p>Seguici sui social!</p>
+</footer>
+

@@ -1,11 +1,23 @@
 <div *ngIf="book" class="book-detail">
-  <h2>{{ book.title }}</h2>
-  <p><strong>Author:</strong> {{ book.author }}</p>
-  <p><strong>Description:</strong> {{ book.description }}</p>
+  <!-- Dettagli del libro -->
+  <h1>{{ book.title }}</h1>
+  <p><strong>Autore:</strong> {{ book.authors }}</p>
+  <p><strong>Descrizione:</strong> {{ book.description }}</p>
+
+  <!-- Immagini del libro -->
   <div *ngIf="book.images && book.images.length">
-    <h3>Images</h3>
+    <h3>Immagini</h3>
     <div *ngFor="let image of book.images">
       <img [src]="image" alt="{{book.title}}" style="max-width:200px; margin: 5px;"/>
     </div>
+  </div>
+
+  <!-- Immagine principale del libro -->
+  <img *ngIf="book.thumbnail" [src]="book.thumbnail" alt="{{ book.title }}" />
+
+  <!-- Altri dettagli del libro -->
+  <div *ngIf="book.otherDetails">
+    <h3>Altri dettagli</h3>
+    <p>{{ book.otherDetails }}</p>
   </div>
 </div>

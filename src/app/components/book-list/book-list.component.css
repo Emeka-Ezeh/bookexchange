@@ -1,8 +1,85 @@
 .book-list {
-  padding: 20px;
+  padding: 3rem;
+  max-width: 1100px; 
+  margin: 0 auto;
 }
+
 .book-item {
-  border: 1px solid #ccc;
-  margin-bottom: 10px;
-  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fffafa;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  gap: 1.1rem; /* Aggiungi spazio tra gli elementi */
+}
+.book-list h2 {
+  color: #2c3e50;
+  font-family: 'Tagesschrift', sans-serif;
+  
+}
+
+
+.book-item h3 {
+  color: #2c3e50;
+  text-align: center;
+  font-family: 'Tagesschrift', sans-serif;
+  font-size: bold 1.5rem; 
+  
+}
+
+.book-item p {
+  font-weight: 500;
+  font-size: 1.1rem;
+  font-family:"Single Day"; ;
+  margin: 0.5rem 0;
+  color: #474747;
+  max-width: 50%;
+
+}
+
+.book-item a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.book-item a:hover {
+  text-decoration: underline;
+}
+
+.book-thumbnail {
+  max-width: 300px;  /* Limita la larghezza dell'immagine */
+  height: auto;      /* Mantieni il rapporto d'aspetto dell'immagine */
+  border-radius: 8px; /* Aggiungi angoli arrotondati all'immagine */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Aggiungi un'ombra all'immagine */
+  margin-left: 2rem; /* Aggiungi margine a sinistra per distanziare l'immagine dal testo */
+}
+
+
+
+
+.footer {
+  background-color: #1f1f1f;
+  color: #d3d3d3;
+  text-align: center;
+  padding-top: 1.1vh;
+  font-size: 14px;
+  margin-top: 3vh;
+}
+
+/* Easter Egg per Kevin il Grande */
+.footer::after {
+  content: "👑 Onoriamo il grandissimo Kevin, leggenda vivente! 👑";
+  display: block;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #ffd700; 
+  opacity: 0; 
+  transition: opacity 0.3s ease; 
+}
+
+.footer:hover::after {
+  opacity: 1; 
 }

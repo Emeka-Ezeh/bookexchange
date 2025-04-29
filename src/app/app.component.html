@@ -1,21 +1,10 @@
 <!-- src/app/app.component.html -->
 <header>
-  <nav>
-    <ul>
-      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
-      <li><a routerLink="/books" routerLinkActive="active">Browse Books</a></li>
-      <li><a routerLink="/profile" routerLinkActive="active">Profile</a></li>
+  <app-navbar></app-navbar>
 
-      <!-- Uncomment or add links as your application requires -->
-      <!-- <li><a routerLink="/login" routerLinkActive="active">Login</a></li> -->
-    </ul>
-  </nav>
 </header>
 
 <main>
   <router-outlet></router-outlet>
 </main>
 
-<footer>
-  <p>&copy; {{ currentYear }} BookExchange</p>
-</footer>
